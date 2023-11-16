@@ -9,6 +9,7 @@ export default function About() {
   return (
     <div>
       About {counterVal}
+      <p>helllo</p>
     </div>
   )
 }
