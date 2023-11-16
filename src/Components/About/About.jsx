@@ -10,6 +10,7 @@ export default function About() {
     <div>
       About {counterVal}
       <p>helllo</p>
+      <p>hbjhhh</p>
     </div>
   )
 }
