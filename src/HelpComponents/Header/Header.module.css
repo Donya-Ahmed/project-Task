@@ -1,0 +1,22 @@
+.firstHead span ,.logo span{
+
+    float: right;
+}
+.firstHead{
+    padding: 12px 37px;
+
+}
+
+.headerContainer{
+    display: flex;
+    flex-direction: column;
+   
+
+}
+.logo{
+    border-top: 1px solid white !important;
+    display: flex;
+    padding: 12px 37px;
+
+    justify-content: space-between;
+}

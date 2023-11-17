@@ -1,10 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 export const getAllProducts = createAsyncThunk('counter/getAllProducts', async (_, { rejectWithValue }) => {
-    return await axios.get(`https://ecommerce.routemisr.com/api/v1/categories`).then((res) => res).catch((err) =>rejectWithValue(err))
+    console.log('hello');
+    return await axios.get(`http://3.65.32.166/api/v2/storefront/products`)
+    .then((res) => res)
+    .catch((err) => rejectWithValue(err))
 })
 const initialState = {
-    value: 0
+    value: 0,
+    allCourses:[]
 }
 export const counterSlice = createSlice({
     name: 'counter',
@@ -20,18 +24,19 @@ export const counterSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(getAllProducts.pending, (state, action) => {
-                console.log('pending',action);
+                console.log('pending', action);
             })
             .addCase(getAllProducts.fulfilled, (state, action) => {
-                console.log('fulfilled',action);
+                console.log('fulfilled', action);
+                state.allCourses=action.payload.data.data
             })
             .addCase(getAllProducts.rejected, (state, action) => {
-                console.log('rejected',action);
+                console.log('rejected', action);
             })
 
 
     }
 })
 export const { increment, decrement } = counterSlice.actions;
-export const counterValue = (state) => state.counter.value;
+export const courses = (state) => state.counter.allCourses;
 export default counterSlice.reducer

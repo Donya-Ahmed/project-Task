@@ -3,9 +3,9 @@
   line-height: 1.5;
   font-weight: 400;
 
-  /* color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424; */
+  color-scheme: light dark;
+  color: white;
+  background-color: black;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,10 +25,32 @@ a:hover {
 body {
   margin: 0;
 
+  color: white;
+  background-color: black;
 
   min-height: 100vh;
 }
-
+.btnPay{
+  background-color: #55E748;
+}
+.h-25{
+  height: 2rem;
+}
+.title{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.carousel-item{
+  background-image: url('./images/banner.5d002eef3c2ca31636eb.webp');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 80vh;
+  /* width: 100%; */
+}
 /* h1 {
   font-size: 3.2em;
   line-height: 1.1;

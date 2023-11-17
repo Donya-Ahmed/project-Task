@@ -7,13 +7,17 @@ import About from './Components/About/About'
 import Contact from './Components/Contact/Contact'
 import { Provider } from 'react-redux'
 import  { store } from './Redux/Store/Store'
+import Courses from './Components/Courses/Courses'
+import { indexLoader } from './Components/utiles/Loaders'
+import CourseDetails from './Components/CourseDetails/CourseDetails'
 
 function App() {
   let routes=createHashRouter([
     {path:'',element:<Layout></Layout> ,errorElement:<NotFound></NotFound>,children:[
       {index:true,element:<Home></Home>},
       {path:'/about',element:<About></About>},
-      {path:'/Contact',element:<Contact></Contact>}
+      {path:'/courses',element:<Courses></Courses>,loader:indexLoader},
+      {path:'/Course/:id',element:<CourseDetails></CourseDetails>}
     ]}
   ])
  return <>
